@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/pagePostStyle.css">
+  <script src="../js/script.js" defer></script>
+  <title>post</title>
+</head>
+<body>
+  <div>
+    <p id="loadingPost">carregando...</p>
+  </div>
+  <div>
+    <button>
+      <a href="pagePosts.html">retornar</a>
+    </button>
+  </div>
+  <main id="postBody">
+
+  </main>
+  <form id="commentContainer">
+    <div id="userEmail">
+      <label for="email">
+        digite seu e-mail
+      </label>
+      <input 
+          type="email" 
+          name="email" 
+          id="email" 
+          placeholder="ex: didi89@mail.com" 
+          required
+        >
+    </div>
+    <div id="userComment">
+      <label for="body">
+        digite seu comentário
+      </label>
+      <textarea 
+          name="body" 
+          id="body" 
+          placeholder="digite seu comentário aqui" 
+          required
+        >
+        </textarea>
+    </div>
+    <input type="submit" value="enviar">
+  </form>
+  <div id="showCommentsContainer">
+
+  </div>
+</body>
+</html>
