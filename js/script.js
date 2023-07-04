@@ -30,7 +30,7 @@ async function getAllPosts() {
   //removendo o "carregando..."
   loadingPosts.style.display = "none";
 
-  data.map((post) =>{
+  data.map((post) =>{  // mapeando o objeto JSON retornado 
     /*
     //criando os molde dos posts
     const div = document.createElement("div"); //container do post
@@ -88,8 +88,8 @@ async function getPost(id) {
 
   console.log(dataComments)
 
-  dataComments.map((comment) => {
-    createComment(comment);
+  dataComments.map((comment) => { // mapeamneto para criação do comentário do usuário
+    createComment(comment); // chamando a function resposnsável pela criação do comentário do usuário
   });
 }
 
@@ -107,16 +107,17 @@ function createComment(comment) {
 
 //postar comentário do usuário(post a comment)
 async function postComment(comment) {
-  const resposnse = await fetch(`${url}/${postId}/comments`, {
-    method: "POST",
+  const resposnse = await fetch(`${url}/${postId}/comments`, { // lendo o link passado 
+    method: "POST", // método de criação
     body: comment,
     headers: {
       "content-type": "application/json"
     },
   });
+  
   const data = await resposnse.json();
-  //add comentário aos outros
-  createComment(data);
+  // function para add comentário aos outros
+  createComment(data); // chamando a function
 }
 
 if(!postId) {
